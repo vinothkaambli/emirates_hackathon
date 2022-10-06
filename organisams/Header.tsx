@@ -1,9 +1,12 @@
 import { AppBar, Container, Toolbar, Typography, Box, Tooltip, IconButton, Avatar } from "@mui/material";
 import { styled, useTheme } from '@mui/material/styles';
+import { useContext } from "react";
+import { EmployeeContext } from "../context/Provider";
 import Logo from './../public/emirates.svg';
 
-const HeaderBar = () => {
+const HeaderBar = (props: any) => {
     const theme = useTheme();
+    const {EmployeeName} = useContext(EmployeeContext);
     return (
         <AppBar 
             sx={{background: theme.palette.primary.main}}
@@ -19,6 +22,7 @@ const HeaderBar = () => {
                                 <Avatar alt="" src="/static/images/avatar/2.jpg" />
                             </IconButton>
                         </Tooltip>
+                        <Typography variant='h6'>{EmployeeName}</Typography>
                     </Box>
                 </Toolbar>
             </Container>

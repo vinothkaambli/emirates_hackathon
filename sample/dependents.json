@@ -1,0 +1,35 @@
+[
+    {
+      "FirstName": "WVQVS",
+      "LastName": "VZWWM",
+      "Relationship": "SELF",
+      "Eligible": "*",
+      "Utilized": "0",
+      "Balance": "*",
+      "RelativeSrlNo": "123456",
+      "RelativeID": "SELF",
+      "DependantType": ""
+    },
+    {
+      "FirstName": "VZMV",
+      "LastName": "VMVNV",
+      "Relationship": "WIFE",
+      "Eligible": "*",
+      "Utilized": "0",
+      "Balance": "*",
+      "RelativeSrlNo": "123456",
+      "RelativeID": "W",
+      "DependantType": ""
+    },
+    {
+      "FirstName": "VHVHWR",
+      "LastName": "VQVSV",
+      "Relationship": "SON",
+      "Eligible": "*",
+      "Utilized": "0",
+      "Balance": "*",
+      "RelativeSrlNo": "1234567",
+      "RelativeID": "SN",
+      "DependantType": ""
+    }
+  ]

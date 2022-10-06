@@ -1,8 +1,9 @@
 import { createTheme, ThemeProvider } from '@mui/material';
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import { Header, Content, SearchForm, Footer } from '../organisams';
-import styles from '../styles/Home.module.css';
+import { GetApiFetcher } from '../context/Fetcher';
+import ApiProvider, { EmployeeProvider } from '../context/Provider';
+import { EmployeeI } from '../interfaces';
+import Home from './app';
 
 const customTheme = createTheme({
   palette: {
@@ -16,21 +17,21 @@ const customTheme = createTheme({
   },
 });
 
-const Home: NextPage = () => {
+const App: NextPage = (props: any) => {
   return (
     <ThemeProvider theme={customTheme}>
-      <div className={styles.container}>
-        <Head>
-          <title>Trips</title>
-          <meta name="description" content="Trips App" />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <Header/>
-        <Content/>
-        <SearchForm/>
-      </div>
+      <ApiProvider>
+        <EmployeeProvider value={props.res}>
+          <Home/>
+        </EmployeeProvider>
+      </ApiProvider>
     </ThemeProvider>
   )
 }
 
-export default Home
+export async function getServerSideProps() {
+  const res = await GetApiFetcher<EmployeeI>(`http://localhost:3000/api/employee`);
+  return { props: { res } }
+}
+
+export default App

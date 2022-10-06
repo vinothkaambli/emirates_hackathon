@@ -1,12 +1,8 @@
 import { styled, useTheme } from "@mui/material/styles";
 import { Typography, Box, Card, Grid, Paper, FormControl, InputLabel, MenuItem, Select, OutlinedInput, Menu, List, Collapse, ListItemButton, ListItemIcon, ListItemText, ListSubheader, Autocomplete, Stack, TextField, Button } from "@mui/material";
 import React from "react";
+import { menuItemsI } from "../interfaces";
 //import SendIcon from '@mui/icons-material/Send';
-
-interface menuItemsI {
-  description: string,
-  bgcolor: string
-}
 
 const top100Films = [
   { title: 'The Shawshank Redemption', year: 1994 }

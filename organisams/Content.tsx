@@ -2,10 +2,7 @@ import React from 'react';
 import { useTheme } from "@mui/material/styles";
 import { Typography, Box, Card, CardMedia } from "@mui/material";
 import bgimage from './../public/bgimage.jpg';
-
-interface ChildComponent {
-  props?: object
-}
+import { ChildComponent } from '../interfaces';
 
 export const Content = (props: ChildComponent) => {
 
