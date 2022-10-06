@@ -1,21 +1,18 @@
 import { AppBar, Container, Toolbar, Typography, Box, Tooltip, IconButton, Avatar } from "@mui/material";
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import Logo from './../public/emirates.svg';
 
 const HeaderBar = () => {
+    const theme = useTheme();
     return (
-        <AppBar position="static">
+        <AppBar 
+            sx={{background: theme.palette.primary.main}}
+            position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
                     <Box sx={{height: '10%', width: '10%', bgcolor: 'Red'}}>
                         <Logo aria-label="Website logo" />
                     </Box>
-                    <Typography
-                        variant="h3"
-                        noWrap
-                    >
-                        TRIPS
-                    </Typography>
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={() => ({ javascript: void (0) })}>
@@ -30,8 +27,6 @@ const HeaderBar = () => {
 };
 
 export const StyledHeaderBar = styled(HeaderBar)( ({theme}) => `
-    background: ${theme.palette.primary.main};
-
     & .MuiTypography-root {
         margin-right: 2,
         font-family: 'monospace',
